@@ -10,5 +10,9 @@ import { HeaderComponent } from './header/header.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'firstAngularApp';
+  title: string = 'This loaded dynamically';
+  imgURL: string = 'https://i5.walmartimages.com/seo/HP-Stream-14-Laptop-Intel-Celeron-N4000-4GB-SDRAM-32GB-eMMC-Office-365-1-yr-Royal-Blue_4f941fe6-0cf3-42af-a06c-7532138492fc_2.cb8e85270e731cb1ef85d431e49f0bf2.jpeg';
+  isDisabled: boolean = true;
+  isActive: boolean = false;
+  fruiteName: string = 'apple';
 }

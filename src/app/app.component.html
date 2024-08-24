@@ -1,3 +1,23 @@
 <h1>The Angular app</h1>
-<app-navbar></app-navbar>
-<app-header></app-header>
+<h2> {{ title }} </h2>
+
+<p>{{ 1+1 }}</p> 
+<!-- //string interpolation is used in upper two code lines which is called data binding, we can put any type of data inside the {{}} like string, number or boleans, but we will only get the answer in strings. -->
+
+<!-- <img [src]="imgURL" alt=""> -->
+<!-- This is called property Binding, means using [] square brackets around the property, in this case it was src, and then use the name of the component which we made in TS file inside the "" -->
+
+<button [disabled]="isDisabled" >disabled using property binding</button>
+
+<!-- class binding means we have combined the css file to our component, we have binded two css classes down there, incase the first one is not active. the 2nd will be active-->
+
+<button 
+[class.active] = 'isActive' 
+[class.no-active] = '!isActive' 
+[class.active-border] = 'isActive' 
+[class.no-active-border] = '!isActive'>
+Click Me</button>
+
+<!-- String Binding  we have to pass a boolean value at the end to make sure we get the right answer, in this case the apple is the TRUE BOOLEAN value, if we put something else we will not get the result we want -->
+
+<button [class.apple] = " fruiteName == 'apple' ">Fruite Ninja</button>
