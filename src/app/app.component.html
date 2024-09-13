@@ -7,17 +7,37 @@
 <!-- <img [src]="imgURL" alt=""> -->
 <!-- This is called property Binding, means using [] square brackets around the property, in this case it was src, and then use the name of the component which we made in TS file inside the "" -->
 
-<button [disabled]="isDisabled" >disabled using property binding</button>
+<!-- <button [disabled]="isDisabled" >disabled using property binding</button> -->
 
 <!-- class binding means we have combined the css file to our component, we have binded two css classes down there, incase the first one is not active. the 2nd will be active-->
 
-<button 
+<!-- <button 
 [class.active] = 'isActive' 
 [class.no-active] = '!isActive' 
 [class.active-border] = 'isActive' 
 [class.no-active-border] = '!isActive'>
-Click Me</button>
+Click Me</button> -->
 
 <!-- String Binding  we have to pass a boolean value at the end to make sure we get the right answer, in this case the apple is the TRUE BOOLEAN value, if we put something else we will not get the result we want -->
 
-<button [class.apple] = " fruiteName == 'apple' ">Fruite Ninja</button>
+<!-- <button [class.apple] = " fruiteName == 'apple' ">Fruite Ninja</button> -->
+
+<!-- style binding: In this we have used if and else statement. means the ? after the isActive is representing the if staement and teh statement after : is representing the else statement. so if the isActive is true the first statement will work and if not the else statement will work -->
+
+<!-- <button 
+[style.backgroundColor]="isActive?'red' : 'green'" 
+    [style.border]="isActive? '3px solid yellow' : '' "
+    [style.cursor]="isActive? 'Pointer' : '' "
+>Click it</button> -->
+
+<!-- in class binding, we can apply multiple css elements to the file. but with style binding we can apply single css element to single part -->
+
+<!-- Event Binding we have to define it first at ts file and then we can make it do whatever event we want to perform which is defined inside the ts file-->
+<button (click)="buttonClick()">Again Click</button>
+
+<input type="text" (keyup) = "keyEnter($event)">
+
+<input type="text" (keyup.enter) = "keyupFiltering()">
+
+<!-- in the first input file we are using the JS approach to filter the enter key, with the keyCode. but in the 2nd input file we are using the angular for the filtering of enter key by just typing the key name after the keyup. -->
+
