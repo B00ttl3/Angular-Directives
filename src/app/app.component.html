@@ -1,5 +1,4 @@
 <h1>The Angular app</h1>
-<<<<<<< HEAD
 <h2> {{ title }} </h2>
 
 <p>{{ 1+1 }}</p> 
@@ -38,11 +37,29 @@ Click Me</button> -->
 
 <input type="text" (keyup) = "keyEnter($event)">
 
-<input type="text" (keyup.enter) = "keyupFiltering()">
+<!-- <input type="text" (keyup.enter) = "keyupFiltering()"> -->
 
-<!-- in the first input file we are using the JS approach to filter the enter key, with the keyCode. but in the 2nd input file we are using the angular for the filtering of enter key by just typing the key name after the keyup. -->
+<!-- in the first input file we are using the JS approach to filter the enter key, with the keyCode. but in the 2nd input file we are using the angular for the filtering of enter key by just typing the key name after the keyup. -- >
 
-=======
-<app-navbar></app-navbar>
-<app-header></app-header>
->>>>>>> 362534fb4fa23f041ee0ba4761de21b310ea2ca4
+<!-- capturing input data using template we create the new template with # -->
+
+<!-- <input type="text" (keyup.enter) = "keyupFiltering(user)" #user id="userInput"> -->
+
+ <!-- two way data binding in JS: means sending and recieving the data from dev to component and component to dev first we got the value from the ts file, and then when we wanted to change it we made a template here is HTNML and made a component in ts file and then it worked for 2 ways-->
+
+ <!-- <input type="text" [value]="userName" #username (keyup.enter)="updateUserName(username)"> -->
+
+ <!-- two way data binding in angular: in anular we just binded the ts file to html by using te ngModel directive and then just used the {{}} to bind the HTML to ts-->
+
+ <input type="text" [(ngModel)]="userName" >
+
+ <h3>{{userName}}</h3>
+
+ <!-- in One Way Data Binding
+  String Interpolation = {{title}}
+  Property Binding = [src]
+  Class Binding = [class.text-red]
+  Style Binding = [style.backgroundColor] 
+  
+  Two-Way Data Binding
+  Two-way Bidning = [(ngModel)] -->
