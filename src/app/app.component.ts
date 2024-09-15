@@ -13,8 +13,7 @@ import { NgIf } from '@angular/common';
 })
 export class AppComponent {
   
-  isLoggedIn: boolean = true;
-  isLoggedIn1: boolean = false;
+  isLoggedIn: boolean = false;
   userName: string = 'Umair Munir';
 
 }
