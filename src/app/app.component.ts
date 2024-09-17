@@ -12,8 +12,19 @@ import { NgIf } from '@angular/common';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  title: string = 'This loaded dynamically'
   
   isLoggedIn: boolean = false;
   userName: string = 'Umair Munir';
+
+  loginCount: number = 0;
+
+
+  countLoginAttempts(){
+    this.loginCount ++;
+    console.log(this.loginCount);
+  }
+
+  userRole: string = "Member"
 
 }

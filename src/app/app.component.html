@@ -22,3 +22,33 @@
 @if (!isLoggedIn) {
     <h5>{{"@Else is working"}}</h5>
 }
+
+<!-- if directives with Number values. the first attemp is using the old approach where we have used the ngIf, but the new appraoch is @if and that is easy to use -->
+
+<!-- <button (click)="countLoginAttempts()" *ngIf="loginCount < 3">Log In</button>
+
+<h4 *ngIf="loginCount > 2" >Exceeded 3 Login attemts, try again in 3 years.</h4> -->
+
+
+@if(loginCount < 3){
+<button (click)="countLoginAttempts()" >Login Syntax</button>
+}
+
+@if (loginCount > 2) {
+    <h4>Exceeded 3 Login attemts, try again in 3 years.</h4>
+}
+
+<!-- String values conditions First we used the old approach to see what is the userRole inside the TS file, and then displays the message according to that role,a nd then we used the new approach of @if and @else if to display the message according to the role inside the TS file -->
+
+<!-- <h5 *ngIf="userRole == 'Admin'; else memberMessage " >Welcome Admin</h5>
+
+<ng-template #memberMessage >
+    <h5>Welcome Member</h5>
+</ng-template> -->
+
+@if (userRole == 'Admin') {
+    <h5>Welcome Admin</h5>
+}
+@else if(userRole == 'Member') {
+    <h5>Welcome Member</h5>
+}
