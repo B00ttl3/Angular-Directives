@@ -76,3 +76,21 @@
 <div [ngTemplateOutlet]="callToAction">
     <h5>Footer</h5>
 </div>
+
+<!-- ngFor directive: so instead of getting the array data separately, we can get the whole data by using ngFor by making another array using let and then storning all the files of our Array which we made in TS inside that new array, and then used the string interpolation to load this inside the browser view -->
+
+<!-- <h3> {{users}} </h3>
+
+<h3> {{users[0] }} </h3>
+<h3> {{users[1] }} </h3>
+<h3> {{users [2] }} </h3>
+<h3> {{users [3] }} </h3> -->
+
+<h3 *ngFor="let user of users" > {{ user }} </h3>
+
+<!-- in the new approach by using @for we can loop through the Array which we made in TS file, by puting @for and then making a new array inside the () and then storing the files of TS file's array inside that new array by using for ArrayName and then in the new approach we need to define the track of the new array which we have made so we use ; track and then newArrayName to get its track done and after that inside the {} we first get how we want to show data like using h3 and then we use string interpolation to show the newArrayName -->
+
+<p>for syntax approach</p>
+@for (user of users; track user) {
+    <h3>{{ user }} - Loaded using For Syntax Block</h3>
+}
