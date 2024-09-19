@@ -52,3 +52,27 @@
 @else if(userRole == 'Member') {
     <h5>Welcome Member</h5>
 }
+
+<!-- What is Ng-Template? It is a great tool in angular which we can use when we need it and we can keep it hidden until we need it. like in the given example, if we use the ng-template without giving any else condition it will never be shown inside our project -->
+
+<h2 *ngIf="userRole == 'Admin'; else dynamicTemplate">Using Dynamic Template</h2>
+
+<ng-template #dynamicTemplate>
+    <p>Content inside ng-template</p>
+</ng-template>
+
+<!-- ngTemplateOutlet. so by using the NgTemplateOutlet we don't have to make buttons on each div. we can just make one button in one ngTemplateOutlet and then we can use it wherever we want. We don't just have to make buttons. we can do anything and make anything inside the ng-template, and then by using ngTemplateOutlet we can use them wherever we want -->
+
+<ng-template  #callToAction>
+    <button>Join Now</button>
+</ng-template>
+
+<div [ngTemplateOutlet]="callToAction" >
+    <h5>Sidebar</h5>
+</div>
+<div [ngTemplateOutlet]="callToAction">
+    <h5>Hero</h5>
+</div>
+<div [ngTemplateOutlet]="callToAction">
+    <h5>Footer</h5>
+</div>
