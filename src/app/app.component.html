@@ -3,15 +3,15 @@
 
 <!-- to add the attributes inside the hadding we have to start it with * and then the attribute the ngIf is the old approach we dont use it anyymore. here we are just working on the old approach which starts with ng there is no ngElse, so we use ! sign after using ngIf to make it ngElse -->
 
-<h2 *ngIf="isLoggedIn" >{{ userName }}</h2>
+<!-- <h2 *ngIf="isLoggedIn" >{{ userName }}</h2>
 
-<h4 *ngIf="!isLoggedIn" >User is not loggen in</h4>
+<h4 *ngIf="!isLoggedIn" >User is not loggen in</h4> -->
 
 
 
 <!-- the new syntax approach is @If then we will add the component inside the () and then will get what we want inside the {}. In this we are just working with the new angular approach which starts with @ -->
 
-@if (isLoggedIn) {
+<!-- @if (isLoggedIn) {
     <h2>{{ userName }}</h2>
 }
 
@@ -21,7 +21,7 @@
 
 @if (!isLoggedIn) {
     <h5>{{"@Else is working"}}</h5>
-}
+} -->
 
 <!-- if directives with Number values. the first attemp is using the old approach where we have used the ngIf, but the new appraoch is @if and that is easy to use -->
 
@@ -86,11 +86,39 @@
 <h3> {{users [2] }} </h3>
 <h3> {{users [3] }} </h3> -->
 
-<h3 *ngFor="let user of users" > {{ user }} </h3>
+<!-- <h3 *ngFor="let user of users" > {{ user }} </h3> -->
 
 <!-- in the new approach by using @for we can loop through the Array which we made in TS file, by puting @for and then making a new array inside the () and then storing the files of TS file's array inside that new array by using for ArrayName and then in the new approach we need to define the track of the new array which we have made so we use ; track and then newArrayName to get its track done and after that inside the {} we first get how we want to show data like using h3 and then we use string interpolation to show the newArrayName -->
 
-<p>for syntax approach</p>
+<!-- <p>for syntax approach</p>
 @for (user of users; track user) {
     <h3>{{ user }} - Loaded using For Syntax Block</h3>
-}
+} -->
+
+<!-- Fetching data in list order. So, we made a ul > li tags and then added the arrays inside them to get the data from array, usinf both old and new approach -->
+
+
+
+<!-- <ul>
+    <li *ngFor="let user of users" >{{ user }}</li>
+</ul>
+
+<ul>
+    @for(user of users; track user) {
+        <li>{{ user }}</li>
+    }
+</ul> -->
+
+
+
+<!-- fetching specific data from array's type any -->
+
+<ul>
+    <li *ngFor="let user of usersObj">{{user.name}}</li>
+</ul>
+
+<ul>
+    @for(user of usersObj; track user) {
+        <li>{{user.id}}</li>
+    }
+</ul>
