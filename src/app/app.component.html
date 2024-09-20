@@ -113,7 +113,9 @@
 
 <!-- fetching specific data from array's type any -->
 
-<ul>
+
+
+<!-- <ul>
     <li *ngFor="let user of usersObj">{{user.name}}</li>
 </ul>
 
@@ -121,4 +123,22 @@
     @for(user of usersObj; track user) {
         <li>{{user.id}}</li>
     }
+</ul> -->
+
+
+
+<!-- Change Detection: used the angular to push new user's details inside the already existed array in TS file which is usersObj. and when we clicked on the button the new persons details were added on the instant without reloading the page, which is a great parameter of angular named Change Detection -->
+
+<button (click)="addNewUser()" >Add New User</button>
+
+<!-- Change Detection 2: Deleting some array's objects. In the example below we used the usersObj example and then we added the delete button infront of every Object present inside the array, and then we made the onDelete function inside the ts and used it to delete the object. the 2nd user which is inside the onDelete(user) is the user which we are getting from ts file and the firt user which is lt user of usersObj is the array which we made here in HTML -->
+
+<!-- <ul>
+    <li *ngFor="let user of usersObj">{{user.name}} <button (click)="onDelete(user)" >Delete</button></li>
+</ul> -->
+
+<!-- Index of For loop: where we can delete the specific object using the simple lines of codes inside the HTML with just one component in ts file. we have to make a new variable in it, to make it loop through the array -->
+
+<ul>
+    <li *ngFor="let user of usersObj; let i = index">{{i}} {{user.name}} <button (click)="onDelete(i)" >Delete</button></li>
 </ul>
