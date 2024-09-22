@@ -145,15 +145,21 @@
 
 <!-- in this example below we have leant how to apply the @for directive and use the change detection in angular, in this we have to use $ sign before the index inside the i variable to make sure that it works -->
 
-<ul>
+<!-- <ul>
     @for(user of usersObj; track user; let i = $index) {
         <li> {{i}} {{user.name}} <button (click)="onDelete(i)" >Delete</button> </li>
     }
-</ul>
+</ul> -->
 
 
 <!-- array length index: tell toal number of users in array -->
 
 <ul>
     <li *ngFor="let user of usersObj; let i = index"> {{usersObj.length}} - {{i}} {{user.name}} <button (click)="onDelete(i)" >Delete</button></li>
+</ul>
+
+<!-- counting total number of users using NgFor count (old approach) -->
+
+<ul>
+    <li *ngFor="let user of usersObj; let i = index; let usersCount = count"> {{usersCount}} - {{i}} {{user.name}} <button (click)="onDelete(i)" >Delete</button></li>
 </ul>
