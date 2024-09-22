@@ -37,6 +37,10 @@ export class AppComponent {
     { id: 4, name: 'New', email: 'new@gmail.com' },
   ]
 
+  constructor(){
+    console.log(this.usersObj.length);
+  }
+
   addNewUser() {
     let user = {id: 5 , name: 'user 1' , email: 'user1@gmail.com'};
     this.usersObj.push(user);

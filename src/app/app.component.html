@@ -150,3 +150,10 @@
         <li> {{i}} {{user.name}} <button (click)="onDelete(i)" >Delete</button> </li>
     }
 </ul>
+
+
+<!-- array length index: tell toal number of users in array -->
+
+<ul>
+    <li *ngFor="let user of usersObj; let i = index"> {{usersObj.length}} - {{i}} {{user.name}} <button (click)="onDelete(i)" >Delete</button></li>
+</ul>
