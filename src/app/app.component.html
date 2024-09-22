@@ -152,7 +152,7 @@
 </ul> -->
 
 
-<!-- array length index: tell toal number of users in array -->
+<!-- array length index: tell toal number of users in array using JS -->
 
 <ul>
     <li *ngFor="let user of usersObj; let i = index"> {{usersObj.length}} - {{i}} {{user.name}} <button (click)="onDelete(i)" >Delete</button></li>
@@ -160,6 +160,14 @@
 
 <!-- counting total number of users using NgFor count (old approach) -->
 
-<ul>
+<!-- <ul>
     <li *ngFor="let user of usersObj; let i = index; let usersCount = count"> {{usersCount}} - {{i}} {{user.name}} <button (click)="onDelete(i)" >Delete</button></li>
+</ul> -->
+
+<!-- counting the total number of users using the new angular approach @For -->
+
+<ul>
+    @for(user of usersObj; track user; let i = $index; let usersCount = $count) {
+        <li> {{usersCount}} {{i}} {{user.name}} <button (click)="onDelete(i)" >Delete</button> </li>
+    }
 </ul>
