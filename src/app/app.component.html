@@ -139,6 +139,14 @@
 
 <!-- Index of For loop: where we can delete the specific object using the simple lines of codes inside the HTML with just one component in ts file. we have to make a new variable in it, to make it loop through the array -->
 
-<ul>
+<!-- <ul>
     <li *ngFor="let user of usersObj; let i = index">{{i}} {{user.name}} <button (click)="onDelete(i)" >Delete</button></li>
+</ul> -->
+
+<!-- in this example below we have leant how to apply the @for directive and use the change detection in angular, in this we have to use $ sign before the index inside the i variable to make sure that it works -->
+
+<ul>
+    @for(user of usersObj; track user; let i = $index) {
+        <li> {{i}} {{user.name}} <button (click)="onDelete(i)" >Delete</button> </li>
+    }
 </ul>
