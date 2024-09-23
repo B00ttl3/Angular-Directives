@@ -166,14 +166,32 @@
 
 <!-- counting the total number of users using the new angular approach @For -->
 
-<ul>
+<!-- <ul>
     @for(user of usersObj; track user; let i = $index; let usersCount = $count) {
         <li> {{usersCount}} {{i}} {{user.name}} <button (click)="onDelete(i)" >Delete</button> </li>
     }
-</ul>
+</ul> -->
 
 <!-- if there is no users info in Array: So the below statement will be true is there is actually no users details in the Array inside the TS file. BUT, when we will click on Add new user button the new users details will be aded and the statement will be false so the p tag will no further display -->
 
-<div *ngIf="usersObj.length == 0">
+<!-- <div *ngIf="usersObj.length == 0">
     <p>No users to Display</p>
-</div>
+</div> -->
+
+<!-- no users info in Array inside TS file, now using the new approach @if which we will have to use inside the ul tag. and not separately from it. we can also use the empty block to get the same result which we are getting from using @if. but we have to use the empty block after the @for block, in this way if the array inside the for block is empty it will leave that and will move to the empty block and display what we have written there -->
+
+<ul>
+
+    @if(usersObj.length == 0){
+        <p>No users to Display - Loaded using the syntax</p>
+    }
+
+    @for(user of usersObj; track user; let i = $index; let usersCount = $count) {
+        <li> {{usersCount}} {{i}} {{user.name}} <button (click)="onDelete(i)" >Delete</button> </li>
+    }
+
+    @empty {
+        <p>No users to Display - Loaded using empty syntax block</p>
+    }
+
+</ul>
