@@ -154,9 +154,9 @@
 
 <!-- array length index: tell toal number of users in array using JS -->
 
-<ul>
+<!-- <ul>
     <li *ngFor="let user of usersObj; let i = index"> {{usersObj.length}} - {{i}} {{user.name}} <button (click)="onDelete(i)" >Delete</button></li>
-</ul>
+</ul> -->
 
 <!-- counting total number of users using NgFor count (old approach) -->
 
@@ -171,3 +171,9 @@
         <li> {{usersCount}} {{i}} {{user.name}} <button (click)="onDelete(i)" >Delete</button> </li>
     }
 </ul>
+
+<!-- if there is no users info in Array: So the below statement will be true is there is actually no users details in the Array inside the TS file. BUT, when we will click on Add new user button the new users details will be aded and the statement will be false so the p tag will no further display -->
+
+<div *ngIf="usersObj.length == 0">
+    <p>No users to Display</p>
+</div>

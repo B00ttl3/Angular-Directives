@@ -30,12 +30,14 @@ export class AppComponent {
 
   users: Array<string> = ['Umair' , 'Munir' , 'Anything' , 'Works'];
 
-  usersObj: Array<any> = [
-    { id: 1, name: 'Umair', email: 'mumair3825@gmail.com' },
-    { id: 2, name: 'Some', email: 'some@gmail.com' },
-    { id: 3, name: 'Thing', email: 'thing@gmail.com' },
-    { id: 4, name: 'New', email: 'new@gmail.com' },
-  ]
+  // usersObj: Array<any> = [
+  //   { id: 1, name: 'Umair', email: 'mumair3825@gmail.com' },
+  //   { id: 2, name: 'Some', email: 'some@gmail.com' },
+  //   { id: 3, name: 'Thing', email: 'thing@gmail.com' },
+  //   { id: 4, name: 'New', email: 'new@gmail.com' },
+  // ]
+
+  usersObj: Array<any> = []
 
   constructor(){
     console.log(this.usersObj.length);
