@@ -195,3 +195,15 @@
     }
 
 </ul>
+
+<!-- checking the first and last properties, so in this we have made new variables named first and last and then made it to give the answer in true or false if the value is first and last -->
+
+@for(user of usersObj; track user; let i = $index; let usersCount = $count; let first = $first; let odd = $odd) {
+    <li> {{odd}} - {{first}} - {{usersCount}} - {{i}} - {{user.name}} <button (click)="onDelete(i)" >Delete</button> </li>
+}
+
+<!-- checking if the coming user's number is even or odd; just like first and last approach we will make new variable and it will tell us which one is true and which one is not -->
+
+@for(user of usersObj; track user; let i = $index; let usersCount = $count; let even = $even; let last = $last) {
+    <li> {{last}} - {{even}} - {{i}} - {{user.name}} <button (click)="onDelete(i)" >Delete</button> </li>
+}
