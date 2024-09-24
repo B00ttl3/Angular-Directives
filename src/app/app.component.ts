@@ -57,6 +57,6 @@ export class AppComponent {
     this.usersObj.splice(index, 1);
    }
 
-   usersRole: string = '';
+   usersRole: string = 'Admin';
 
 }

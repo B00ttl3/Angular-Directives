@@ -218,3 +218,17 @@
 
     <p *ngSwitchDefault >Please Login</p>
 </div>
+
+<!-- SwitchCase Directive using the new approach using @switch @case. So, in this we need to define the switch once in which we will tell the variable of TS file and in the @case we will first define about which role we want to show the message inside the () and then inside {} we show which message we want to show. and if there is no role defined, instead of using @case. we use @default and then just the message inside the {} -->
+
+@switch (usersRole) {
+    @case ('Admin') {
+        <p>Welcome Admin - syntax approach</p>
+    }
+    @case ('Editor') {
+        <p>Welcome Editor -Syntax Approach</p>
+    }
+    @default { 
+        <p>please Login</p> 
+    }
+}
