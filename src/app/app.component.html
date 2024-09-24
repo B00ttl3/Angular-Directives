@@ -180,7 +180,7 @@
 
 <!-- no users info in Array inside TS file, now using the new approach @if which we will have to use inside the ul tag. and not separately from it. we can also use the empty block to get the same result which we are getting from using @if. but we have to use the empty block after the @for block, in this way if the array inside the for block is empty it will leave that and will move to the empty block and display what we have written there -->
 
-<ul>
+<!-- <ul>
 
     @if(usersObj.length == 0){
         <p>No users to Display - Loaded using the syntax</p>
@@ -194,16 +194,24 @@
         <p>No users to Display - Loaded using empty syntax block</p>
     }
 
-</ul>
+</ul> -->
 
 <!-- checking the first and last properties, so in this we have made new variables named first and last and then made it to give the answer in true or false if the value is first and last -->
 
-@for(user of usersObj; track user; let i = $index; let usersCount = $count; let first = $first; let odd = $odd) {
+<!-- @for(user of usersObj; track user; let i = $index; let usersCount = $count; let first = $first; let odd = $odd) {
     <li> {{odd}} - {{first}} - {{usersCount}} - {{i}} - {{user.name}} <button (click)="onDelete(i)" >Delete</button> </li>
-}
+} -->
 
 <!-- checking if the coming user's number is even or odd; just like first and last approach we will make new variable and it will tell us which one is true and which one is not -->
 
-@for(user of usersObj; track user; let i = $index; let usersCount = $count; let even = $even; let last = $last) {
+<!-- @for(user of usersObj; track user; let i = $index; let usersCount = $count; let even = $even; let last = $last) {
     <li> {{last}} - {{even}} - {{i}} - {{user.name}} <button (click)="onDelete(i)" >Delete</button> </li>
-}
+} -->
+
+
+<!-- SwitchCase directive: old approach, by using this we tell to show which property or which code according to the role present inside the TS file -->
+
+<div [ngSwitch]="usersRole" >
+    <p *ngSwitchCase="'Admin'" >Welcome Admin</p>
+    <p *ngSwitchCase = "'Member'" >Welcome Member</p>
+</div>
