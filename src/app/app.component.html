@@ -209,9 +209,12 @@
 } -->
 
 
-<!-- SwitchCase directive: old approach, by using this we tell to show which property or which code according to the role present inside the TS file -->
+<!-- SwitchCase directive: old approach, by using this we tell to show which property or which code according to the role present inside the TS file, first we have to define the switch and then we have to define the cases. and if there is no role assigned then we can use the ngSwitchDefault and then there is no need to define the case -->
 
 <div [ngSwitch]="usersRole" >
-    <p *ngSwitchCase="'Admin'" >Welcome Admin</p>
+    <p *ngSwitchCase= "'Admin'" >Welcome Admin</p>
     <p *ngSwitchCase = "'Member'" >Welcome Member</p>
+    <p *ngSwitchCase = "'Editor'" >Welcome Editor</p>
+
+    <p *ngSwitchDefault >Please Login</p>
 </div>
